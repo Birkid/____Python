@@ -56,14 +56,69 @@
 # print(china('安徽','','肥东'))
 
 ### 函数与while循环
-def china(省,市,县):
-    全称 = 省+市+县
-    return 全称
-while True:
-    print("\n 输入你送在的地域名称")
-    a1 = input("你在哪个省？\n")
-    a2 = input("你在哪个市？\n")
-    a3 = input("你在哪个县？\n")
-    A = china(a1,a2,a3)
-    print("\n你在"+A)
-    break
+# def china(省,市,县):
+#     全称 = 省+市+县
+#     return 全称
+# while True:
+#     print("\n 输入你送在的地域名称，输入'x'退出！")
+#     a1 = input("你在哪个省？\n")
+#     if a1 == 'x':
+#          break
+#     a2 = input("你在哪个市？\n")
+#     a3 = input("你在哪个县？\n")
+#     A = china(a1,a2,a3)
+#     print("\n你在"+A)
+
+## 函数与列表
+### 传递列表
+# def user_name(names):
+#     for name in names:
+#         msg = "你大爷的 " + name +'!'
+#         print(msg)
+# # users = ['aa','bb','cc','dd']
+# # user_name(users)
+# user_name(['aa','vv','ff'])
+
+### 修改列表
+# def 修改(kaishi,jieshu):
+#     while kaishi:
+#         xiugai = kaishi.pop()
+#         print("待修改的数值有"+xiugai)
+#         jieshu.append(xiugai)
+# def 修改后(jieshu):
+#     print("已修改完成")
+#     for i in jieshu:
+#         print(i)
+# kaishi = ['aa','bb','cc','dd']
+# jieshu = []
+# 修改(kaishi[:4],jieshu)           #切片修改副本
+# 修改后(jieshu)
+
+### 传递任意数量的实参（利用 * 创建一个空的元组来填充）
+# def china_shengfen(*shengfen):
+#     print("\n中国的省份包含有：")
+#     for i in shengfen:
+#         print(i)
+# china_shengfen('安徽','湖南','湖北','河北')
+# china_shengfen('河南','陕西')
+
+### 位置实参和任意数量实参
+# def china_shengfen(renkou,*shengfen):
+#     print("\n中国的省份人口" + str(renkou)+"的包含有：")
+#     for i in shengfen:
+#         print(i)
+# china_shengfen(60,'安徽','湖南','湖北','河北')
+# china_shengfen(88,'河南','陕西')
+
+### 传递任意数量的关键字实参（利用 ** 创建一个空字典填充）
+def user_msg(first,next,**end):
+    msg = {}
+    msg['姓名'] = first
+    msg['爱好'] = next
+    for i , u  in end.items():
+        msg[i] = u
+    return msg
+a = user_msg('狗蛋','打游戏',生日 = 2022,学习 = '很差')
+for k,v in a.items():
+    print(k,v)
+# print(a)
