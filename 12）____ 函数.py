@@ -121,4 +121,4 @@ def user_msg(first,next,**end):
 a = user_msg('狗蛋','打游戏',生日 = 2022,学习 = '很差')
 for k,v in a.items():
     print(k,v)
-# print(a)
+print(a)
