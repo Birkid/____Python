@@ -7,10 +7,6 @@ print(姓名)
 print(年龄)
 print(人类)
 
-#name1 = 30
-#name2 = 30
-#name3 = 30
-#name4 = 30
 name1 = name2 = name3 = name4 = 30
 print(name1)
 print(name2)
